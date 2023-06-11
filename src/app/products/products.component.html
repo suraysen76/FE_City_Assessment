@@ -1,0 +1,21 @@
+<h2>Product List</h2>
+<br>
+<div class="container">
+    <table border="1">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+       
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let itm of productList">
+        <td><span>{{itm.Name}}</span></td>
+        <td><span>{{itm.Description}}</span></td>
+        <td><span>{{itm.MarkupPrice}}</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
