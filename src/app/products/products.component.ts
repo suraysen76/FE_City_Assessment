@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
-export class Product {
+export class ProductModel {
   Name: string | undefined;
   Description: string | undefined;
+  UnitPrice:string|undefined;
   MarkupPrice: string|undefined;
+  MaximumQuantity:number|undefined;
 }
 
 
@@ -16,13 +18,13 @@ export class Product {
 })
 export class ProductsComponent implements OnInit  {
   title = 'Prodoct List';
-  baseUrl = environment.baseUrl;
+  baseUrl = environment.baseUrl + 'GetProductsInJson';
   httpOptions = {
     headers: new HttpHeaders({
       'api-key': 'API-KB7R5N2G9DA9EJR'
     })
   };
-  productList: Product[] = [];
+  productList: ProductModel[] = [];
   constructor(private httpClient: HttpClient) { }
   getProducts(){
 
